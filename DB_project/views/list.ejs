@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <head>
+        <meta charset ="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>게시판 리스트</title>
+        <link rel ="stylesheet" href="/bootstrap/css/bootstrap.css">
+        <script>
+        </script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #713232;">
+            <a class="navbar-brand" href="/">광운대학교</a>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link"><%= user %><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/auth/logout">로그아웃</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <!-- board atributes -->
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a</td>
+                    <td><a href="/test/notice_board/read?idx=<?php echo $board['idx']; ?>"><?php echo $title;?></td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td><a href="/test/notice_board/read?idx=<?php echo $board['idx']; ?>"><?php echo $title;?></td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <hr />
+        <div class="float-right">
+            <button type="button pull-right" class="btn btn-dark">글쓰기</button>
+        </div>
+    
+        <div class="d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <footer class="footer mt-auto py-3" style="background-color: #2f2f2f; position: fixed; bottom: 0; width: 100%;">
+            <div class="container" style="color:white">
+                <ul class="list-unstyled list-inline text-center py-2">
+                    <li class="list-inline-item">
+                    <h6 class="mb-1">서울시 노원구 광운로 20 (월계동 447-1) 광운대학교(01897) | 대표전화 02.940.5114</h6>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright text-center py-3" style="color:white">
+            COPYRIGHTⓒKWANGWOON UNIVERSITY. ALL RIGHTS RESERVED
+            </div>
+        </footer>
+
+    </body>
+</html>
+
+
+
+

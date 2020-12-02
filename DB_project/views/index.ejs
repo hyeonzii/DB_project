@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.js"></script>
+  <head>
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>메인페이지</title>
+    <link rel ="stylesheet" href="/bootstrap/css/bootstrap.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #713232;">
+      <a class="navbar-brand" href="/">광운대학교</a>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link"><%= usernum %> | <%= username %><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/auth/logout">로그아웃</a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="d-flex justify-content-center align-items-center">
+              <img style="object-fit:contain; max-height:180px; max-width:auto" src="/images/item1.png" src="/enrolment">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center">
+                <div class="btn-group">
+                  <button type="button" onclick="location.href='/enrolment'" class="btn btn-lg btn-outline-secondary">수강신청</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex justify-content-center align-items-center">
+              <img style="object-fit:contain; max-height:180px; max-width:auto" src="/images/item2.png">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center">
+                <div class="btn-group">
+                  <button type="button" onclick="location.href='#'" class="btn btn-lg btn-outline-secondary">성적확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex justify-content-center align-items-center">
+              <img style="object-fit:contain; max-height:180px; max-width:auto" src="/images/item3.png">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center">
+                <div class="btn-group">
+                  <button type="button" onclick="location.href='/board'" class="btn btn-lg btn-outline-secondary">공지사항 </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3" style="background-color: #2f2f2f; position: fixed; bottom: 0; width: 100%;">
+      <div class="container" style="color:white">
+          <ul class="list-unstyled list-inline text-center py-2">
+              <li class="list-inline-item">
+              <h6 class="mb-1">서울시 노원구 광운로 20 (월계동 447-1) 광운대학교(01897) | 대표전화 02.940.5114</h6>
+              </li>
+          </ul>
+      </div>
+      <div class="footer-copyright text-center py-3" style="color:white">
+        COPYRIGHTⓒKWANGWOON UNIVERSITY. ALL RIGHTS RESERVED
+      </div>
+    </footer>
+
+  </body>
+
+</html>

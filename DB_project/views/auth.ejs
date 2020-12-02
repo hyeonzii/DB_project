@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>로그인 / 회원가입</title>
+        <link rel="stylesheet" href="/stylesheets/auth.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="form-wrap">
+                <div class="logo">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="button-wrap">
+                    <div id="btn"></div>
+                    <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
+                    <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+                </div>
+                <form id="login" action="/login/login_process" method="post" class="input-group">
+                    <input type="text" class="input-field" name="username" placeholder="아이디" required>
+                    <input type="password" class="input-field" name="password" placeholder="비밀번호" required>
+                    <button class="submit" value="login">Login</button>
+                </form>
+                <form id="register" action="/auth/register" method="post" class="input-group">
+                    <input type="text" class="input-field" name="id" placeholder="아이디" required>
+                    <input type="text" class="input-field" name="name" placeholder="이름" required>
+                    <input type="text" class="input-field" name="studentnum" placeholder="학번"" required>
+                    <input type="password" class="input-field" name="password" placeholder="비밀번호" required>
+                    <input type="text" class="input-field" name="department" placeholder="학과" required>
+                    <input type="text" class="input-field" name="phonenum" placeholder="전화번호" required>
+                    <input type="text" class="input-field" name="email" placeholder="메일주소" required>
+                    <button class="submit" type="submit">REGISTER</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+            
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
+
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+        </script>
+    </body>
+</html>

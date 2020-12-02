@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <stript src="/javascripts/jquery-3.4.1.min.js"></stript>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body class="login">
+    <form class="id_pw" action="/login/login_process" method="post">
+        <h1 class="fn-font"> 로그인 </h1>
+        <div class="input-group info-input-group">
+            <label for="username" class="flex-center">
+            <input type="text" name="username" placeholder="id">
+        </div>
+        <div class="input-group info-input-group">
+            <label for="password" class="flex-center">
+            <input type="password" name="password" placeholder="password">
+        </div>
+        <input type="submit" value="Login" class="login-btn">
+    </form>
+
+    <p class="help-register"> <a href="/join" class="fn-font">회원가입</a></p>
+</body>
+
+</html>

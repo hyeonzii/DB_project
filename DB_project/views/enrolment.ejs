@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.js"></script>
+    <head lang="en">
+        <title><%= title %></title>
+        <meta charset='utf-8'>
+        <link rel ="stylesheet" href="/bootstrap/css/bootstrap.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #713232;">
+        <a class="navbar-brand" href="/">광운대학교</a>
+  
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link"><%= usernum %> | <%= username %><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/auth/logout">로그아웃</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+    <div style="padding: 50px; font: 14px Lucida Grande, Helvetica, Arial, sans-serif">
+      <h1><%= title %></h1>
+      <style>
+      table {
+        width: 100%;
+        border: 1px solid #444444;
+        border-collapse: collapse;
+      }
+      th {
+        border: 1px solid #444444;
+        padding: 10px;
+        background-color: #713232;
+        color: white;
+      }
+      td {
+        border: 1px solid #444444;
+        padding: 10px;
+      }
+      #add_btn
+      {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      #add_btn
+      {
+        border: 1px solid #713232;
+        background-color: rgba(0,0,0,0);
+        color: #713232;
+        padding: 5px;
+      }
+      #add_btn:hover
+      {
+        color:white;
+        background-color: #713232;
+      }
+</style>
+      <a href="/enrolment/basket" style = "color:#00B7FF">수강신청 현황 확인하기</a>
+      <br>
+      <br>
+      <form action="/enrolment" method="post" >
+        <input type="text" name="add_course_num" placeholder="신청할 학정번호 입력 " id="add_course_num" style="height: 1.8rem; width:15rem;">
+        <button type="submit" id="add_btn">신청하기</button>
+      <br>
+      <br>
+          <table class="table table-hover">
+              <tr align="center">
+                  <th>학정번호</th>
+                  <th>과목명</th>
+                  <th>구분</th>
+                  <th>교수</th>
+                  <th>학점</th>
+                  <th>강의장소</th>
+                  <th>강의시간1</th>
+                  <th>강의시간2</th>
+                  <th>강의시간3</th>
+              </tr>
+<%
+              var c=0;
+              var course_num='';
+              for(var i=0;i<rows.length;i++)
+              {
+                var oneItem=rows[i];
+                for(a=0;a<overlaplist.length;a++)
+                {
+                  var overItem=overlaplist[a];
+                  if(oneItem.학정번호==overItem.학정번호)
+                  {
+                    c=1;
+                    break;
+                  }
+
+                  }
+
+                  if(c==1){
+%>
+                <tr align ="center">
+                  <td><%=oneItem.학정번호%></td>
+                  <td><%=oneItem.과목명%></td>
+                  <td><%=oneItem.구분%></td>
+                  <td><%=oneItem.교수%></td>
+                  <td><%=oneItem.학점%></td>
+                  <td><%=oneItem.강의장소%></td>
+                  <td><%=oneItem.강의시간1%></td>
+                  <td><%=oneItem.강의시간2%></td>
+                  <td><%=oneItem.강의시간3%></td>
+                </tr>
+<%
+              c=0;
+}
+              else{
+%>
+                  <tr align="center">
+                    <td><%=oneItem.학정번호%></td>
+                    <td><%=oneItem.과목명%></td>
+                    <td><%=oneItem.구분%></td>
+                    <td><%=oneItem.교수%></td>
+                    <td><%=oneItem.학점%></td>
+                    <td><%=oneItem.강의장소%></td>
+                    <td><%=oneItem.강의시간1%></td>
+                    <td><%=oneItem.강의시간2%></td>
+                    <td><%=oneItem.강의시간3%></td>
+                  </tr>
+<%
+                }
+            }
+%>
+          </table>
+          </form>
+    </div>
+          <footer class="footer mt-auto py-3" style="background-color: #2f2f2f; width: 100%;">
+            <div class="container" style="color:white">
+                <ul class="list-unstyled list-inline text-center py-2">
+                    <li class="list-inline-item">
+                    <h6 class="mb-1">서울시 노원구 광운로 20 (월계동 447-1) 광운대학교(01897) | 대표전화 02.940.5114</h6>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright text-center py-3" style="color:white">
+              COPYRIGHTⓒKWANGWOON UNIVERSITY. ALL RIGHTS RESERVED
+            </div>
+          </footer>
+    </body>
+</html>
